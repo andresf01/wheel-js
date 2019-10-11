@@ -1,0 +1,91 @@
+html {
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+$animation-bezier: cubic-bezier(.68,-0.51,.19,.69);
+$min-roll: 1440deg;
+
+$radio: 86.60254px;
+$lado: 100px;
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: $lado;
+  height: $lado;
+  perspective: 400px;
+}
+
+.ruleta {
+  position: relative;
+  transform-style: preserve-3d;
+  width: $lado;
+  height: $lado;
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $lado;
+    height: $lado;
+    border: 1px solid black;
+
+    &:nth-child(1) {
+      background: hsla(  0, 100%, 50%, 0.95);
+      transform: rotateX(0deg) translateZ($radio);
+    }
+    &:nth-child(2) {
+      background: hsla( 60, 100%, 50%, 0.95);
+      transform-origin: bottom;
+      transform: translateZ($radio) translateY(-$lado) rotateX(60deg);
+    }
+    &:nth-child(3) {
+      background: hsla(120, 100%, 50%, 0.95);
+      transform-origin: top;
+      transform: translateZ(-$radio) rotateX(90deg) rotateX(30deg);
+    }
+    &:nth-child(4) {
+      background: hsla(180, 100%, 50%, 0.95);
+      transform: rotateX(-180deg) translateZ($radio);
+    }
+    &:nth-child(5) {
+      background: hsla(204, 100%, 50%, 0.95);
+      transform-origin: bottom;
+      transform: translateZ(-$radio) rotateX(240deg);
+    }
+    &:nth-child(6) {
+      background: hsla(286, 100%, 50%, 0.95);
+      transform-origin: top;
+      transform: translateZ($radio) translateY($lado) rotateX(-60deg);
+    }
+  }
+}
+
+.palanca {
+  width: 30px;
+  height: 80px;
+  transform-origin: bottom;
+  transition: all 0.5s;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  
+  > div:nth-child(1) {
+    width: 30px;
+    height: 30px;
+    background: #3f87a6;
+    border-radius: 50%;
+  }
+}
