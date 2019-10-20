@@ -8,11 +8,15 @@ $min-roll: 1440deg;
 $radio: 86.60254px;
 $lado: 100px;
 
+h1 {
+  text-align: center;
+}
+
 .wrapper {
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: 100%;
+  left: 60%;
+  transform: translateY(-100%);
 }
 
 .app {
@@ -79,13 +83,23 @@ $lado: 100px;
   cursor: pointer;
   transform-style: preserve-3d;
   // position: absolute;
-  // left: 50%;
+  // left: 60%;
   // top: 50%;
+  display: flex;
+  flex-direction: column;
   
   > div:nth-child(1) {
     width: 30px;
     height: 30px;
     background: #3f87a6;
     border-radius: 50%;
+  }
+
+  > div:nth-child(2) {
+    background-color: bisque;
+    z-index: -1;
+    width: 50%;
+    transform: translate(50%, -10px);
+    flex-grow: 1;
   }
 }

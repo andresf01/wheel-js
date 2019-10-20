@@ -39,9 +39,12 @@ const App = () => {
 
   return (
     <div>
-      <div className="palanca" onClick={handleTwister}>
-        <div></div>
-        <div></div>
+      <h1>RO</h1>
+      <div className="wrapper">
+        <div className="palanca" onClick={handleTwister}>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <div className="app">
         <Ruleta className="ruleta">
